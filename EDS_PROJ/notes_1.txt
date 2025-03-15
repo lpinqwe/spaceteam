@@ -1,0 +1,21 @@
+EDSfSA - electrodynamic dust shield for space applications
+https://ntrs.nasa.gov/api/citations/20160005317/downloads/20160005317.pdf
+https://techport.nasa.gov/projects/32733
+https://www.hou.usra.edu/meetings/lunardust2020/pdf/5027.pdf
+https://ntrs.nasa.gov/citations/20130012545
+https://www.sciencedirect.com/science/article/pii/S0038092X17306497
+
+notes&ideas
+photo (git)
+
+(personal)
+https://chatgpt.com/c/67d59cff-6308-8004-a90d-c5f97b821cb2
+
+???modeling???
+?COMSOL Multiphysics.
+?Ansys Maxwell + Fluent DPM
+
+todo:
+	powołać zespół , zapytać lunartech jak oni to ogarniją , znaleźć dokumentacje techniczną eds , 
+	pomyśleć nad tematem (pcb, "Generator kaskadowy"+booster+pwm, trafopowielacz, etc...)
+	
