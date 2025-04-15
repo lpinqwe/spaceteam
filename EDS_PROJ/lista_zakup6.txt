@@ -1,0 +1,25 @@
+lista materiałów
+
+EDS
+	???
+	mam transformator od telewizora , więc może tylko diody wysokiego napięcia
+	
+	UF4007 (до 1000 В, 1 А),
+	HER508, BY255,
+	or special diodes HV05-12 (do 5 kV),
+	
+	cascade multiplier -- raczej nie , pozabijamy się
+
+CAPACITANCE
+	Analog Devices Inc. EVAL-CN0552-PMDZ Evaluation Board
+	CD4052/or another A/D mux	example:
+	https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjK-uGRuNmMAxUoU5EFHaCOOtAYABAKGgJscg&co=1&gclid=CjwKCAjw5PK_BhBBEiwAL7GTPXobCFObl_r181-xDcAE_HCY6qRRgNFsJmH7i1tievkNkbYPefnuyxoC4EYQAvD_BwE&ohost=www.google.com&cid=CAESVuD2DB6lgWotaBMWvx_AlZ0CO7qjp5lUA--hIf-0YloajIrhLn03fLCqkkN8Oy_PgCBxK-5r5jBURr6TI1Esd_tVybUrDGTdXQau8GQB2cCk3bw2wC4R&sig=AOD64_1zh9lIUEPPWOTRhdTELyuSaX992g&ctype=5&q=&ved=2ahUKEwj6ktyRuNmMAxU0GxAIHdReI7MQ9aACKAB6BAgLEBI&adurl=
+	
+	do stanowiska :
+		elektrody, przewody (może być folia i zwyczajne)
+		rura
+		"symulant śruby"
+		"symulant regolitu"
+		silnik krokowy
+		kontroller do krokowego
+		arduino
