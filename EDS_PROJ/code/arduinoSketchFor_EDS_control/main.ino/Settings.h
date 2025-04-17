@@ -1,9 +1,14 @@
-#pragma once
+// Settings.h
 
-class Settings {
-public:
-  static String getHost() { return "192.168.1.100"; }
-  static int getPort() { return 5678; }
-  static String getSendQueue() { return "getQ1_esp"; }
-  static String getReceiveQueue() { return "getQ2_esp"; }
-};
+#ifndef SETTINGS_H
+#define SETTINGS_H
+
+#define WIFI_SSID "your_wifi_ssid"
+#define WIFI_PASSWORD "your_wifi_password"
+
+#define RABBITMQ_HOST "127.0.0.1"
+#define RABBITMQ_PORT 5672
+#define RABBITMQ_USER "guest"
+#define RABBITMQ_PASS "guest"
+
+#endif

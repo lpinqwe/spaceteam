@@ -1,6 +1,5 @@
 #pragma once
 #include <ArduinoJson.h>
-
 struct Command {
   String msgID;
   String msgPayload;
@@ -18,7 +17,7 @@ struct Command {
     }
   }
 
-  String get() {
+  String get()const {
     StaticJsonDocument<256> doc;
     doc["msgID"] = msgID;
     doc["msgPayload"] = msgPayload;

@@ -1,39 +1,56 @@
-#pragma once
+#ifndef RABBITRABBIT_H
+#define RABBITRABBIT_H
+
 #include <WiFi.h>
-#include <WiFiClient.h>
-#include "Command.h"
-#include "Settings.h"
+#include "RabbitMQ.h" // Псевдокод, используется библиотека для работы с RabbitMQ на ESP32
+#include "Factory.h"
 
-class RabbitClient {
-private:
-  WiFiClient client;
-
+class RabbitRabbit {
 public:
-  RabbitClient() {}
+  Factory& factory;
 
-  bool connectToBroker() {
-    return client.connect(Settings::getHost().c_str(), Settings::getPort());
+  RabbitRabbit(Factory& fact) : factory(fact) {
+    // Инициализация объекта фабрики команд
   }
 
-  void sendMessage(const Command &cmd) {
-    if (!client.connected()) {
-      connectToBroker();
+  void start_consuming() {
+    // Здесь должен быть код для подключения к RabbitMQ
+    // и получения сообщений
+
+    // Подключение к RabbitMQ
+    if (connectToRabbitMQ()) {
+      // Если подключение успешно, начинаем получать сообщения
+      Serial.println("Connected to RabbitMQ.");
+    } else {
+      Serial.println("Failed to connect to RabbitMQ.");
     }
-    String message = cmd.get();
-    client.println(message); // отправка как JSON по TCP
   }
 
-  bool receiveMessage(Command &cmd) {
-    if (!client.connected()) {
-      if (!connectToBroker()) return false;
-    }
-
-    if (client.available()) {
-      String line = client.readStringUntil('\n');
-      cmd = Command(line);
-      return true;
-    }
-
-    return false;
+  bool connectToRabbitMQ() {
+    // Использование библиотеки RabbitMQ для ESP32
+    // Например, RabbitMQ клиент на ESP32, его нужно адаптировать под свой код
+    return true;  // Заглушка
   }
+
+void callback(String message) {
+  // Преобразуем строку в команду
+  Command command(message);
+
+  // Получаем объект команды через фабрику
+  MessageInterface* handler = factory.createCommand(command);
+
+  if (handler != nullptr) {
+    // Выполняем команду
+    Command result = handler->execute();
+
+    // Логируем результат
+    Serial.println("Result:");
+    Serial.println(result.get());
+  } else {
+    Serial.println("Unknown command: " + command.msgCommand);
+  }
+}
+
 };
+
+#endif
